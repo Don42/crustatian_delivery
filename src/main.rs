@@ -38,11 +38,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .get(start_json..end_json)
         .map(|s| s.replace("\\\"", "\""))
         .unwrap();
-    println!(
-        "{}",
-        initial_state
-        );
     let parsed: Value = serde_json::from_str(&initial_state)?;
-    //println!("{:?}", parsed);
+    println!("{}", serde_json::to_string_pretty(&parsed).unwrap());
     Ok(())
 }
