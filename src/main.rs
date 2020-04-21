@@ -3,7 +3,6 @@ use std::io::Read;
 
 mod provider;
 
-
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut file = File::open("./state.json")?;
     let mut payload = String::new();
